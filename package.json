@@ -2,9 +2,11 @@
   "name": "wild_campers",
   "version": "1.0.0",
   "description": "Full stack app to share wild camping locations across the globe",
-  "main": "server.js",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "lint": "./node_modules/.bin/eslint . --ext .js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,9 @@
   },
   "dependencies": {
     "@hapi/hapi": "^21.3.12",
-    "dotenv": "^16.4.7"
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "handlebars": "^4.7.8"
   }
 }
