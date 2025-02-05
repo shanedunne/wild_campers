@@ -1,0 +1,26 @@
+{{> nav active="signup"}}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+  <div class="form-container">
+    <h1>Sign Up</h1>
+    <form>
+      <div class="row">
+        <div class="col">
+          <input type="text" id="firstNameSignup" class="form-control" placeholder="First name" aria-label="First name" />
+        </div>
+        <div class="col">
+          <input type="text" id="lastNameSignup" class="form-control" placeholder="Last name" aria-label="Last name" />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="loginEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" />
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="loginPassword" class="form-label">Password</label>
+        <input type="password" class="form-control" id="loginPassword" />
+      </div>
+        {{> submit-button }}
+    </form>
+  </div>
+</div>

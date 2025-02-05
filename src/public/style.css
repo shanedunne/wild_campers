@@ -1,18 +1,60 @@
+html {
+    height: 100vh;
+    margin: 0;
+}
 
+.body-div {
+  padding: 0;
+  width: auto;
+  height: 100vh;
+  background-color: #fefae0;
+  font-family: "Fauna One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-.body {
-    padding: 0;
-    width: auto;
+h1, h2, h3, h4, h5 {
+    color: #2F1D0E;
 }
 
 /* NAV BAR */
 nav {
-    width: 100vw;
-    background-color: #606C38;
+  width: 100vw;
+  background-color: #606c38;
+}
+
+.navbar-brand {
+    color: #2F1D0E;
+    font-weight: bolder;
+}
+
+.navbar-nav .nav-link {
+    color: #2F1D0E;
+    font-weight: bold;
+    padding: 1px 150px; 
+    transition: color 0.3s;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #BC6C25;
   }
 
-  
+/* BUTTONS */
+.submit-button {
+    background-color: #606c38;
+    
+    color: #fefae0;
+    transition: color 0.3s;
+}
 
+.submit-button:hover {
+    background-color: #283618;
+    color: #fefae0;
+}
 
-
-  
+  /* SIGNUP LOGIN */
+  .form-container {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+  }
