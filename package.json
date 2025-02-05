@@ -1,0 +1,11 @@
+{
+  "name": "wild_campers",
+  "version": "1.0.0",
+  "description": "Full stack app to share wild camping locations across the globe",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
