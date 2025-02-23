@@ -7,6 +7,9 @@ import { fileURLToPath } from "url";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { apiRoutes } from "./api-routes.js";
+import Cookie from "@hapi/cookie";
+import 'dotenv/config'
+import { accountsController } from "./controllers/accounts-controller.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -19,6 +22,8 @@ async function init() {
     });
     await server.register(Vision);
     await server.register(Inert);
+    await server.register(Cookie);
+
 
     // setup handlebars
     server.views({
@@ -33,10 +38,24 @@ async function init() {
         isCached: false,
     });
 
+
+    server.auth.strategy("session", "cookie", {
+        cookie: {
+            name: process.env.COOKIE_NAME,
+            password: process.env.COOKIE_KEY,
+            isSecure: false,
+        },
+        redirectTo: "/",
+        validate: accountsController.validate,
+    });
+    server.auth.default("session");
+
+
     // route for static css doc
     server.route({
         method: "GET",
         path: "/public/{param*}",
+        options: { auth: false },
         handler: {
             directory: {
                 path: path.join(__dirname, "public"),
@@ -46,7 +65,7 @@ async function init() {
 
     // initialise database
     db.init();
-    
+
     // route for webroutes
     server.route(webRoutes);
     server.route(apiRoutes)

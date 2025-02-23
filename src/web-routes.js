@@ -8,9 +8,11 @@ export const webRoutes = [
     { method: "GET", path: "/logout", config: accountsController.logout },
     { method: "POST", path: "/register", config: accountsController.signup },
     { method: "POST", path: "/authenticate", config: accountsController.login },
+    {method: "GET", path: "/account", config: accountsController.getAccountInfo},
 
     { method: "GET", path: "/dashboard", config: dashboardController.index },
     { method: "POST", path: "/dashboard/addlocation", config: dashboardController.addLocation },
 
+    
 
 ];
