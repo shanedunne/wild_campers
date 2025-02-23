@@ -6,6 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
+import { apiRoutes } from "./api-routes.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -48,6 +49,7 @@ async function init() {
     
     // route for webroutes
     server.route(webRoutes);
+    server.route(apiRoutes)
     await server.start();
     console.log("Server running on %s", server.info.uri);
 }

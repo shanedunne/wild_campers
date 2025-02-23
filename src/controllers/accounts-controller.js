@@ -27,10 +27,13 @@ export const accountsController = {
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
+      console.log(email, password)
       if (!user || user.password !== password) {
         return h.redirect("/");
+        console.log("error logging in")
       }
       return h.redirect("/dashboard");
+      console.log("logging in")
     },
   },
   logout: {

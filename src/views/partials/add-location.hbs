@@ -1,0 +1,16 @@
+<div class="form-container">
+  <h2>Add a location</h2>
+  <form action="/dashboard/addlocation" method="POST">
+    <div class="row">
+      <div class="col">
+        <input type="text" id="locationName" class="form-control" placeholder="Location Name"
+          aria-label="locationName" name="locationName"/>
+
+      </div>
+      <div class="col">
+        {{> submit-button}}
+      </div>
+    </div>
+
+  </form>
+</div>
