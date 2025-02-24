@@ -15,6 +15,27 @@
       "longitude": "54.53643575",
       "locationDescription": "This spot is set on a piece of public land by a surfing beach on the atlantic coast. Ideally located 10 minutes from Clifden, pitch your tent in view of the mountains and enjoy a morning swim.",
       "_id": "39c19344-1682-4376-bd94-67c76a293e78"
+    },
+    {
+      "name": "cs",
+      "latitude": "sdf",
+      "longitude": "",
+      "locationDescription": "dsfs",
+      "_id": "8315ffbd-edf8-462e-9260-89e52840b30c"
+    },
+    {
+      "name": "sd",
+      "latitude": "dfs",
+      "longitude": "sdf",
+      "locationDescription": "sdf",
+      "_id": "9f7fd0c6-7ace-4432-bc86-671b05f80045"
+    },
+    {
+      "name": "sfg",
+      "latitude": "4253433",
+      "longitude": "4534e",
+      "locationDescription": "rtet",
+      "_id": "9daf88fd-f1e8-41a4-9337-caddbf703ea7"
     }
   ]
 }

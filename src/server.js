@@ -10,6 +10,8 @@ import { apiRoutes } from "./api-routes.js";
 import Cookie from "@hapi/cookie";
 import 'dotenv/config'
 import { accountsController } from "./controllers/accounts-controller.js";
+import Joi from "joi";
+
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -23,6 +25,7 @@ async function init() {
     await server.register(Vision);
     await server.register(Inert);
     await server.register(Cookie);
+    server.validator(Joi);
 
 
     // setup handlebars

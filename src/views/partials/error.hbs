@@ -1,0 +1,10 @@
+{{#if errors}}
+  <div class="alert alert-danger" role="alert">
+    <p class="mb-2"><strong>There was a problem...</strong></p>
+    <ul class="mb-0">
+      {{#each errors}}
+        <li>{{message}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}
