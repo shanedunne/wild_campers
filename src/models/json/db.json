@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "firstName": "Shane",
+      "lastName": "Dunne",
+      "email": "shanejjdunne@hotmail.com",
+      "password": "s",
+      "_id": "9f158644-4959-4664-865d-a65f14081ba4"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Ballyconnelly Commanage",
+      "latitude": "33.53465347",
+      "longitude": "54.53643575",
+      "locationDescription": "This spot is set on a piece of public land by a surfing beach on the atlantic coast. Ideally located 10 minutes from Clifden, pitch your tent in view of the mountains and enjoy a morning swim.",
+      "_id": "39c19344-1682-4376-bd94-67c76a293e78"
+    }
+  ]
+}
