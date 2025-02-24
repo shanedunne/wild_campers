@@ -1,0 +1,28 @@
+{{> menu}}
+<section class="section">
+    <div class="d-flex justify-content-center" style="min-height: 90vh;">
+  <div class="container">
+    <div class="location-container">
+        <div class="location-name my-5">
+        <h2>
+            {{location.name}}
+        </h2>
+        <p class="coordinates">
+            <small class="text-muted">
+              Latitude: {{location.latitude}}, Longitude: {{location.longitude}}
+            </small>
+          </p>
+          <p class="country">
+            <small>Ireland</small>
+          </p>
+    </div>
+    <div class="location-content">
+        <p>
+            {{location.locationDescription}}
+        </p>
+    </div>
+    </div>
+    
+  </div>
+    </div>
+</section>

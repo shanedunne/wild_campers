@@ -1,6 +1,6 @@
 html {
-    height: 100vh;
-    margin: 0;
+  height: 100vh;
+  margin: 0;
 }
 
 .body-div {
@@ -13,8 +13,12 @@ html {
   font-style: normal;
 }
 
-h1, h2, h3, h4, h5 {
-    color: #2F1D0E;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #2f1d0e;
 }
 
 /* NAV BAR */
@@ -24,67 +28,65 @@ nav {
 }
 
 .navbar-brand {
-    color: #2F1D0E;
-    font-weight: bolder;
+  color: #2f1d0e;
+  font-weight: bolder;
 }
 
 .navbar-nav .nav-link {
-    color: #2F1D0E;
-    font-weight: bold;
-    padding: 1px 150px; 
-    transition: color 0.3s;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #BC6C25;
-  }
-  
-  /* FORMS */
+  color: #2f1d0e;
+  font-weight: bold;
+  padding: 1px 150px;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #bc6c25;
+}
+
+/* FORMS */
 
 form .form-control {
-  background-color: #FCF5D8;
+  background-color: #fcf5d8;
 }
 
 form .form-control:focus {
-  background-color: #FCF5D8;
+  background-color: #fcf5d8;
 }
-
 
 /* BUTTONS */
 .submit-button {
-    background-color: #606c38;
-    
-    color: #fefae0;
-    transition: color 0.3s;
+  background-color: #606c38;
+
+  color: #fefae0;
+  transition: color 0.3s;
 }
 
 .submit-button:hover {
-    background-color: #283618;
-    color: #fefae0;
+  background-color: #283618;
+  color: #fefae0;
 }
 
-  /* SIGNUP LOGIN */
-  .form-container {
-    max-width: 500px;
-    width: 100%;
-    padding: 20px;
-  }
+/* SIGNUP LOGIN */
+.form-container {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+}
 
-  /* ACCOUNT INFO */
+/* ACCOUNT INFO */
 
-  .account-card {
-    color: #2F1D0E;
+.account-card {
+  color: #2f1d0e;
+}
+.account-card .card-header {
+  background-color: #f6e4c0;
+}
 
-  }
-  .account-card .card-header {
-    background-color: #F6E4C0;
-  }
+.account-card .card-body {
+  background-color: #fcf5d8;
+}
 
-  .account-card .card-body {
-    background-color: #FCF5D8;
-  }
-
-  /* DASHBOARD 
+/* DASHBOARD 
   .locations-container-card {
     background-color: #FCF5D8;
     border: 1px solid #F6E4C0;
@@ -92,8 +94,22 @@ form .form-control:focus {
   }
   */
 
-  .location-card {
-    background-color: #FCF5D8;
-    border: 1px solid #F6E4C0;
+.location-card {
+  background-color: #fcf5d8;
+  border: 1px solid #f6e4c0;
+}
 
-  }
+.location-open {
+  color: #2f1d0e;
+}
+
+.location-open:hover {
+  color: #606c38;
+  transition: 0.3s;
+}
+
+/* LOCATION VIEW */
+.location-container {
+  width: 70%;
+  padding: 2rem;
+}
