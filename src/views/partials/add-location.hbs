@@ -1,16 +1,32 @@
-<div class="form-container">
-  <h2>Add a location</h2>
-  <form action="/dashboard/addlocation" method="POST">
-    <div class="row">
-      <div class="col">
-        <input type="text" id="locationName" class="form-control" placeholder="Location Name"
-          aria-label="locationName" name="locationName"/>
-
-      </div>
-      <div class="col">
-        {{> submit-button}}
-      </div>
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <h2>Add a location</h2>
+      <form action="/dashboard/addlocation" method="POST">
+        <div class="mb-3">
+          <div class="mb-3">
+            <input type="text" id="locationName" class="form-control" placeholder="Location Name"
+              aria-label="locationName" name="locationName" />
+          </div>
+          <div class="row">
+            <div class="mb-3 col-md-6">
+              <input type="text" id="latitude" class="form-control" placeholder="Latitude" aria-label="latitude"
+                name="latitude" />
+            </div>
+            <div class="mb-3 col-md-6">
+              <input type="text" id="longitude" class="form-control" placeholder="Longitude" aria-label="longitude"
+                name="longitude" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <textarea id="locationDescription" name="locationDescription" class="form-control"
+              placeholder="Location Description" rows="3"></textarea>
+          </div>
+          <div class="d-grid">
+            {{> submit-button}}
+          </div>
+        </div>
+      </form>
     </div>
-
-  </form>
+  </div>
 </div>

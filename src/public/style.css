@@ -38,6 +38,17 @@ nav {
   .navbar-nav .nav-link:hover {
     color: #BC6C25;
   }
+  
+  /* FORMS */
+
+form .form-control {
+  background-color: #FCF5D8;
+}
+
+form .form-control:focus {
+  background-color: #FCF5D8;
+}
+
 
 /* BUTTONS */
 .submit-button {
@@ -57,4 +68,32 @@ nav {
     max-width: 500px;
     width: 100%;
     padding: 20px;
+  }
+
+  /* ACCOUNT INFO */
+
+  .account-card {
+    color: #2F1D0E;
+
+  }
+  .account-card .card-header {
+    background-color: #F6E4C0;
+  }
+
+  .account-card .card-body {
+    background-color: #FCF5D8;
+  }
+
+  /* DASHBOARD 
+  .locations-container-card {
+    background-color: #FCF5D8;
+    border: 1px solid #F6E4C0;
+    border-radius: 8px;
+  }
+  */
+
+  .location-card {
+    background-color: #FCF5D8;
+    border: 1px solid #F6E4C0;
+
   }

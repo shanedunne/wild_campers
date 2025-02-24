@@ -1,23 +1,29 @@
-<div class="d-flex justify-content-center align-items-center" >
-  <div class="container">
-    <div class="row">
-        <h1>{{user.firstName}}'s Account Information</h1>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card account-card" style="max-width: 600px; width: 100%;">
+    <div class="card-header">
+      <h3 class="mb-0">{{user.firstName}}'s Account Information</h3>
     </div>
-    <div class="row">
-        <div class="col">
-            <p>First Name: {{user.firstName}}</p>
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <p class="mb-1"><strong>First Name:</strong></p>
+          <p>{{user.firstName}}</p>
         </div>
-        <div class="col">
-            <p>Last Name: {{user.lastName}}</p>
+        <div class="col-md-6">
+          <p class="mb-1"><strong>Last Name:</strong></p>
+          <p>{{user.lastName}}</p>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p>Email: {{user.email}}</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-1"><strong>Email:</strong></p>
+          <p>{{user.email}}</p>
         </div>
-        <div class="col">
-            <p>Password: {{user.password}}</p>
+        <div class="col-md-6">
+          <p class="mb-1"><strong>Password:</strong></p>
+          <p>{{user.password}}</p>
         </div>
+      </div>
     </div>
   </div>
 </div>

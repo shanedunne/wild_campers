@@ -1,7 +1,23 @@
-{{#each locations}}
-  <div class="box box-link-hover-shadow">
-    <h2 class="name">
-      {{name}}
-    </h2>
+<div class="container my-4 locations-container-card">
+  <h2>Saved Locations</h2>
+  <div class="row justify-content-center">
+    {{#each locations}}
+    
+      <div class="col-md-5 mb-4">
+        <div class="card location-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">
+              <small class="text-muted">
+                Latitude: {{latitude}}, Longitude: {{longitude}}
+              </small>
+            </p>
+              <p class="card-text">{{locationDescription}}</p>
+            
+          </div>
+        </div>
+      </div>
+      
+    {{/each}}
   </div>
-{{/each}}
+</div>
