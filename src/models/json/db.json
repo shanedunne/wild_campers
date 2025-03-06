@@ -20,6 +20,13 @@
       "email": "bart@simpson.com",
       "password": "secret",
       "_id": "42ec3a84-8ea3-492a-8ec2-ebf3cc1eefa8"
+    },
+    {
+      "firstName": "Shane",
+      "lastName": "Dunne",
+      "email": "shanejjdunne@hotmail.com",
+      "password": "s",
+      "_id": "df3b08be-5c9b-41d2-bb1b-a2878f432abb"
     }
   ],
   "locations": [
