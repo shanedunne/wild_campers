@@ -51,7 +51,7 @@ export const testLocations = [
 
 ];
 
-export const location =
+export const achill =
 {
     name: "Achill Island, Ireland",
     latitude: "53.9000",

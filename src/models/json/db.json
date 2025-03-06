@@ -5,51 +5,44 @@
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "ff49acdd-b88b-4116-b459-198efbcd15ab"
+      "_id": "a49acbb2-e4cb-495b-961e-ff6c6e5bcf1e"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "a678a4f9-914f-48c9-8370-9be3593107c6"
+      "_id": "28cbf804-6cfd-4d52-b8fe-201343e9b594"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "8157aefd-c5f5-4614-9df8-101dfc258387"
+      "_id": "42ec3a84-8ea3-492a-8ec2-ebf3cc1eefa8"
     }
   ],
   "locations": [
     {
-      "name": "Ballyconnelly Commanage",
-      "latitude": "33.53465347",
-      "longitude": "54.53643575",
-      "locationDescription": "This spot is set on a piece of public land by a surfing beach on the atlantic coast. Ideally located 10 minutes from Clifden, pitch your tent in view of the mountains and enjoy a morning swim.",
-      "_id": "39c19344-1682-4376-bd94-67c76a293e78"
+      "name": "Wicklow Mountains, Ireland",
+      "latitude": "53.0000",
+      "longitude": "-6.4000",
+      "locationDescription": "Experience rugged landscapes and serene valleys ideal for camping and hiking.",
+      "_id": "be2aeb38-6cc5-48de-8d8c-4a4db169e47e"
     },
     {
-      "name": "cs",
-      "latitude": "sdf",
-      "longitude": "",
-      "locationDescription": "dsfs",
-      "_id": "8315ffbd-edf8-462e-9260-89e52840b30c"
+      "name": "Killarney National Park, Ireland",
+      "latitude": "52.0000",
+      "longitude": "-9.5000",
+      "locationDescription": "Lush woodlands and sparkling lakes make this park perfect for a nature getaway.",
+      "_id": "cca300e6-fecc-4ad9-b7a6-d29af4e7c098"
     },
     {
-      "name": "sd",
-      "latitude": "dfs",
-      "longitude": "sdf",
-      "locationDescription": "sdf",
-      "_id": "9f7fd0c6-7ace-4432-bc86-671b05f80045"
-    },
-    {
-      "name": "sfg",
-      "latitude": "4253433",
-      "longitude": "4534e",
-      "locationDescription": "rtet",
-      "_id": "9daf88fd-f1e8-41a4-9337-caddbf703ea7"
+      "name": "Glendalough, Ireland",
+      "latitude": "53.0010",
+      "longitude": "-6.3290",
+      "locationDescription": "Discover ancient monastic ruins set amid tranquil scenery, perfect for a peaceful camping retreat.",
+      "_id": "e7920344-2604-44ba-8db3-5a73a0aad419"
     }
   ]
 }

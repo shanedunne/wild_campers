@@ -7,8 +7,16 @@ export const db = {
   userStore: null,
   locationStore: null,
 
-  init() {
-    this.userStore = userJsonStore;
-    this.locationStore = locationJsonStore;
+  init(storeType) {
+    switch (storeType) {
+      case "json":
+        this.userStore = userJsonStore;
+        this.locationStore = locationJsonStore;
+        break;
+      default:
+        this.userStore = userMemStore;
+        this.locationStore = locationtMemStore;
+    }
+
   },
 };
