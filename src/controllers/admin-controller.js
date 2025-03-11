@@ -62,7 +62,7 @@ export const adminController = {
 
         handler: async function (request, h) {
             const user_id = request.params.id;
-            await db.userStore.deleteUser(user_id);
+            await db.userStore.deleteUserById(user_id);
             return h.redirect("/admin-view");
         },
     },
