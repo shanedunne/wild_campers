@@ -1,0 +1,14 @@
+<div class="my-4">
+  <h2>Current Categories
+  </h2>
+  <div class="list-group">
+    {{#each category}}
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <span>{{category}}</span>
+        <a href="admin/deletecategory/{{_id}}"><i class="fas fa-trash-alt"></i></a>
+      </div>
+
+    {{/each}}
+  </div>
+
+</div>

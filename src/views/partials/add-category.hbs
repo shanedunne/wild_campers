@@ -1,0 +1,17 @@
+  <div class="row justify-content-center">
+      <h2>Add a Category</h2>
+      <form action="/dashboard/addcategory" method="POST">
+        <div class="mb-3">
+          <div class="mb-3">
+            <input type="text" id="categoryName" class="form-control" placeholder="Category Name"
+              aria-label="categoryName" name="categoryName" />
+          </div>
+          <div class="d-grid">
+            {{> submit-button}}
+          </div>
+        </div>
+      </form>
+    </div>
+<div class="my-4">
+  {{> list-categories }}
+</div>
