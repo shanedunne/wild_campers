@@ -58,3 +58,13 @@ export const achill =
     longitude: "-10.2000",
     locationDescription: "Enjoy dramatic coastal views and rugged terrain on Ireland's largest island, ideal for outdoor adventures."
 }
+
+export const woodland = {
+    categoryName: "Woodland"
+}
+
+export const testCategories = [
+    { categoryName: "Beach" },
+    { categoryName: "Mountain" },
+    { categoryName: "River" },
+]
