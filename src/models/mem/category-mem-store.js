@@ -1,28 +1,28 @@
 import { v4 } from "uuid";
 
-let categorys = [];
+let categories = [];
 
 export const categorytMemStore = {
-  async getAllCategorys() {
-    return categorys;
+  async getAllCategories() {
+    return categories;
   },
 
-  async addcategory(category) {
+  async addCategory(category) {
     category._id = v4();
-    categorys.push(category);
+    categories.push(category);
     return category;
   },
 
   async getCategoryById(id) {
-    return categorys.find((category) => category._id === id);
+    return categories.find((category) => category._id === id);
   },
 
   async deleteCategoryById(id) {
-    const index = categorys.findIndex((category) => category._id === id);
-    categorys.splice(index, 1);
+    const index = categories.findIndex((category) => category._id === id);
+    categories.splice(index, 1);
   },
 
-  async deleteAllCategorys() {
-    categorys = [];
+  async deleteAllCategories() {
+    categories = [];
   },
 };
