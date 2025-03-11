@@ -1,15 +1,20 @@
 {{> menu}}
 <section class="section">
+    <div class="d-flex justify-content-center my-3">
+        <h2>Admin Dashboard</h2>
+    </div>
+</section>
+<section class="section">
     <div class="d-flex justify-content-center" style="min-height: 90vh;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8">
-                    <div class="card" style="width: 100%;">
+                <div class="col-md-8 col-sm-9">
+                    <div class="card list-users" style="width: 100%;">
                         {{> list-users}}
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="card" style="width: 100%;">
+                <div class="col-md-4 col-sm-3">
+                    <div class="card list-categories" style="width: 100%;">
 
                         {{> add-category}}
                     </div>

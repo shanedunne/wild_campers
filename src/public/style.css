@@ -113,3 +113,44 @@ form .form-control:focus {
   width: 70%;
   padding: 2rem;
 }
+
+
+/* ADMIN DASHBOARD */
+.card.list-users,
+.card.list-users .card-body,
+.card.list-users .table,
+.card.list-users .table thead th,
+.card.list-users .table tbody td {
+  background-color: #fcf5d8;
+}
+
+
+.card.list-users .table tbody td a {
+  color: #606c38;
+  text-align: center;
+  
+}
+
+
+.list-categories {
+  background-color: #fcf5d8;
+
+}
+
+.list-categories form input {
+  background-color: #f6e4c0;
+  width: 70%;
+  vertical-align: middle;
+
+}
+
+.list-categories form .submit-button {
+  width: 50%;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+
+
+

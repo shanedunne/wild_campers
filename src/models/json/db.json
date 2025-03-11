@@ -23,6 +23,14 @@
       "password": "secret",
       "role": "USER",
       "_id": "a9a4621f-dc72-4c1e-a2d3-895bd2491e1a"
+    },
+    {
+      "firstName": "Shane",
+      "lastName": "Dunne",
+      "email": "shanejjdunne@hotmail.com",
+      "password": "s",
+      "role": "USER",
+      "_id": "8ca237b4-be61-414b-8583-9dbff7f69d6e"
     }
   ],
   "locations": [
@@ -60,6 +68,10 @@
     {
       "categoryName": "River",
       "_id": "b59032ba-af17-4858-be7c-e95243c80dec"
+    },
+    {
+      "category": "test",
+      "_id": "a7c4bd4f-55f0-4a46-a16a-d39b3c12d2f2"
     }
   ]
 }
