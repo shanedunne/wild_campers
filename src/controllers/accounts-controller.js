@@ -29,8 +29,17 @@ export const accountsController = {
       },
     },
     handler: async function (request, h) {
-      const user = request.payload;
-      await db.userStore.addUser(user);
+      const firstName = request.payload.firstName;
+      const lastName = request.payload.lastName;
+      const email = request.payload.email;
+      const password = request.payload.password;
+      await db.userStore.addUser({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+        role: "USER"
+      });
       return h.redirect("/");
     },
   },

@@ -1,4 +1,5 @@
 import { db } from "../models/db.js";
+import { CategorySpec } from "../models/joi-schemas.js";
 
 export const adminController = {
     // render admin view listing users and categories, with ability to add a category

@@ -19,3 +19,7 @@ export const LocationSpec = {
   locationDescription: Joi.string().min(50).max(1000).required()
 
 };
+
+export const CategorySpec = {
+  categoryName: Joi.string().min(3).max(25).required(),
+}

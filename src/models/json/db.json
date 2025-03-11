@@ -5,21 +5,24 @@
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "fc89c4a2-3815-4be2-ae0c-2db5814f6c10"
+      "role": "USER",
+      "_id": "59a38388-3faf-41c6-ac62-dad04b08a612"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "a19dfaaa-36c7-4430-b348-6d35aa2836bb"
+      "role": "USER",
+      "_id": "2f09b67d-ddaa-437c-8821-c3f777b0086f"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "a5c16531-d11d-4855-9168-56153cce3258"
+      "role": "USER",
+      "_id": "a9a4621f-dc72-4c1e-a2d3-895bd2491e1a"
     }
   ],
   "locations": [
@@ -28,35 +31,35 @@
       "latitude": "53.0000",
       "longitude": "-6.4000",
       "locationDescription": "Experience rugged landscapes and serene valleys ideal for camping and hiking.",
-      "_id": "57acfad3-071b-45f8-8d69-b3ad3413df62"
+      "_id": "d2852650-ef75-4b6b-9c27-48f3013596d5"
     },
     {
       "name": "Killarney National Park, Ireland",
       "latitude": "52.0000",
       "longitude": "-9.5000",
       "locationDescription": "Lush woodlands and sparkling lakes make this park perfect for a nature getaway.",
-      "_id": "6ff30136-9673-43de-ae5e-9738ccb13b9c"
+      "_id": "1886b2f0-42de-4213-bac4-5e4863f737e9"
     },
     {
       "name": "Glendalough, Ireland",
       "latitude": "53.0010",
       "longitude": "-6.3290",
       "locationDescription": "Discover ancient monastic ruins set amid tranquil scenery, perfect for a peaceful camping retreat.",
-      "_id": "5bc6e217-d2c6-4312-b7c9-1ab430873f9a"
+      "_id": "7e8c04b2-ca2f-44b9-87a8-8712eafb8518"
     }
   ],
   "categories": [
     {
       "categoryName": "Beach",
-      "_id": "200e9d27-6c4a-4265-84ed-706715bba511"
+      "_id": "c3abec7a-5f00-4607-bf18-585cc81c9aa7"
     },
     {
       "categoryName": "Mountain",
-      "_id": "f7be76ed-b370-47e2-95d5-85bb8ac85329"
+      "_id": "13c286d9-4dbe-4f5f-81e6-45f18927f711"
     },
     {
       "categoryName": "River",
-      "_id": "251e5b6a-6fd5-4387-8ff8-08ac9026f9ad"
+      "_id": "b59032ba-af17-4858-be7c-e95243c80dec"
     }
   ]
 }
