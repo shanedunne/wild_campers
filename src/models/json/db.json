@@ -1,14 +1,6 @@
 {
   "users": [
     {
-      "firstName": "Homer",
-      "lastName": "Simpson",
-      "email": "homer@simpson.com",
-      "password": "secret",
-      "role": "USER",
-      "_id": "59a38388-3faf-41c6-ac62-dad04b08a612"
-    },
-    {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
@@ -72,6 +64,18 @@
     {
       "category": "test",
       "_id": "a7c4bd4f-55f0-4a46-a16a-d39b3c12d2f2"
+    },
+    {
+      "category": "test_!",
+      "_id": "e122635b-6f35-400d-8d56-fd98afbc5a97"
+    },
+    {
+      "category": "test 5",
+      "_id": "776abd97-802d-4d4a-9011-dc43884c6250"
+    },
+    {
+      "category": "hello",
+      "_id": "d9bd6ca3-ed30-485d-a68d-f180fc93eb6c"
     }
   ]
 }

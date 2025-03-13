@@ -25,7 +25,7 @@ export const webRoutes = [
     {method: "GET", path: "/admin", config: adminController.index },
     { method: "DELETE", path: "/admin/deletecategory/{id}", config: adminController.deleteCategory },
     { method: "POST", path: "/admin/addcategory", config: adminController.addCategory },
-    { method: "DELETE", path: "/admin/deleteuser/{id}", config: adminController.deleteUser },
+    { method: "GET", path: "/admin/deleteuser/{id}", config: adminController.deleteUser },
 
 
 

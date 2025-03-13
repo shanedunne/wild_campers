@@ -32,7 +32,7 @@ export const adminController = {
             await db.categoryStore.addCategory({
                 category: category,
             });
-            return h.redirect("/admin-view");
+            return h.redirect("/admin");
         },
     },
 
@@ -64,7 +64,7 @@ export const adminController = {
         handler: async function (request, h) {
             const user_id = request.params.id;
             await db.userStore.deleteUserById(user_id);
-            return h.redirect("/admin-view");
+            return h.redirect("/admin");
         },
     },
 
