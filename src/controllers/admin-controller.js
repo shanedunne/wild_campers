@@ -48,7 +48,7 @@ export const adminController = {
         handler: async function (request, h) {
             const category_id = request.params.id;
             await db.categoryStore.deleteCategoryById(category_id);
-            return h.redirect("/admin-view");
+            return h.redirect("/admin");
         },
     },
 

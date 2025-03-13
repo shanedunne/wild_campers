@@ -23,7 +23,7 @@ export const webRoutes = [
 
     // Admin controller routes
     {method: "GET", path: "/admin", config: adminController.index },
-    { method: "DELETE", path: "/admin/deletecategory/{id}", config: adminController.deleteCategory },
+    { method: "GET", path: "/admin/deletecategory/{id}", config: adminController.deleteCategory },
     { method: "POST", path: "/admin/addcategory", config: adminController.addCategory },
     { method: "GET", path: "/admin/deleteuser/{id}", config: adminController.deleteUser },
 

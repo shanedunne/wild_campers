@@ -132,7 +132,8 @@ form .form-control:focus {
 }
 
 
-.list-categories {
+.list-categories,
+.list-categories .list-group-item {
   background-color: #fcf5d8;
 
 }
@@ -149,6 +150,12 @@ form .form-control:focus {
   border-radius: 5px;
   text-align: center;
 
+}
+
+.list-categories .list-group-item a {
+  color: #606c38;
+  text-align: center;
+  
 }
 
 

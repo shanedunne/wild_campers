@@ -50,30 +50,6 @@
   ],
   "categories": [
     {
-      "categoryName": "Beach",
-      "_id": "c3abec7a-5f00-4607-bf18-585cc81c9aa7"
-    },
-    {
-      "categoryName": "Mountain",
-      "_id": "13c286d9-4dbe-4f5f-81e6-45f18927f711"
-    },
-    {
-      "categoryName": "River",
-      "_id": "b59032ba-af17-4858-be7c-e95243c80dec"
-    },
-    {
-      "category": "test",
-      "_id": "a7c4bd4f-55f0-4a46-a16a-d39b3c12d2f2"
-    },
-    {
-      "category": "test_!",
-      "_id": "e122635b-6f35-400d-8d56-fd98afbc5a97"
-    },
-    {
-      "category": "test 5",
-      "_id": "776abd97-802d-4d4a-9011-dc43884c6250"
-    },
-    {
       "category": "hello",
       "_id": "d9bd6ca3-ed30-485d-a68d-f180fc93eb6c"
     }
