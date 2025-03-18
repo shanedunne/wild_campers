@@ -1,5 +1,4 @@
 import { Location } from "./location.js";
-import { Category } from "./category.js";
 
 export const locationMongoStore = {
   async getAllLocations() {

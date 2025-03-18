@@ -28,9 +28,9 @@ export const adminController = {
         },
 
         handler: async function (request, h) {
-            const category = request.payload.categoryName;
+            const categoryName = request.payload.categoryName;
             await db.categoryStore.addCategory({
-                category: category,
+                categoryName: categoryName,
             });
             return h.redirect("/admin");
         },
