@@ -1,12 +1,20 @@
 {
   "users": [
     {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "role": "USER",
+      "_id": "8f91ad80-b591-4320-97fe-d15889c03bfb"
+    },
+    {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
       "role": "USER",
-      "_id": "2f09b67d-ddaa-437c-8821-c3f777b0086f"
+      "_id": "77b9e4e7-5f4f-4bc1-ab0d-c46e6f5d757e"
     },
     {
       "firstName": "Bart",
@@ -14,15 +22,7 @@
       "email": "bart@simpson.com",
       "password": "secret",
       "role": "USER",
-      "_id": "a9a4621f-dc72-4c1e-a2d3-895bd2491e1a"
-    },
-    {
-      "firstName": "Shane",
-      "lastName": "Dunne",
-      "email": "shanejjdunne@hotmail.com",
-      "password": "s",
-      "role": "USER",
-      "_id": "8ca237b4-be61-414b-8583-9dbff7f69d6e"
+      "_id": "3ba0bcda-83ac-4529-9f96-bbba525b6ad4"
     }
   ],
   "locations": [
@@ -31,27 +31,35 @@
       "latitude": "53.0000",
       "longitude": "-6.4000",
       "locationDescription": "Experience rugged landscapes and serene valleys ideal for camping and hiking.",
-      "_id": "d2852650-ef75-4b6b-9c27-48f3013596d5"
+      "_id": "3f373944-56ad-4457-8824-ce33ae73451b"
     },
     {
       "name": "Killarney National Park, Ireland",
       "latitude": "52.0000",
       "longitude": "-9.5000",
       "locationDescription": "Lush woodlands and sparkling lakes make this park perfect for a nature getaway.",
-      "_id": "1886b2f0-42de-4213-bac4-5e4863f737e9"
+      "_id": "d5838d57-adcc-47dc-a8a5-49d299feb500"
     },
     {
       "name": "Glendalough, Ireland",
       "latitude": "53.0010",
       "longitude": "-6.3290",
       "locationDescription": "Discover ancient monastic ruins set amid tranquil scenery, perfect for a peaceful camping retreat.",
-      "_id": "7e8c04b2-ca2f-44b9-87a8-8712eafb8518"
+      "_id": "152adc9e-71ff-4c87-8867-21e0872254d5"
     }
   ],
   "categories": [
     {
-      "category": "hello",
-      "_id": "d9bd6ca3-ed30-485d-a68d-f180fc93eb6c"
+      "categoryName": "Beach",
+      "_id": "a1c1985a-1db4-4618-adaf-3554c42233d2"
+    },
+    {
+      "categoryName": "Mountain",
+      "_id": "5eb49938-564a-4095-8d39-c7ffef3c802e"
+    },
+    {
+      "categoryName": "River",
+      "_id": "f56021e1-a427-4afc-9335-86be5a338845"
     }
   ]
 }

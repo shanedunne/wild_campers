@@ -5,7 +5,7 @@ import { assertSubset } from "../test-utils.js";
 
 suite("User model tests", () => {
     setup(async () => {
-        db.init("json");
+        db.init("mongo");
         await db.userStore.deleteAll();
         for (let i = 0; i < testUsers.length; i++) {
             testUsers[i] = await db.userStore.addUser(testUsers[i]);
