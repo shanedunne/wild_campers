@@ -6,7 +6,7 @@ import { assertSubset } from "../test-utils.js";
 suite("Category model tests", () => {
 
     setup(async () => {
-        db.init("json");
+        db.init("mongo");
         await db.categoryStore.deleteAllCategories();
         for (let i = 0; i < testCategories.length; i++) {
             testCategories[i] = await db.categoryStore.addCategory(testCategories[i]);

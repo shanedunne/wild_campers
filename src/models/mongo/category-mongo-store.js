@@ -1,6 +1,5 @@
 import Mongoose from "mongoose";
 import { Category } from "./category.js"
-import { trackMongoStore } from "./track-mongo-store.js";
 
 export const categoryMongoStore = {
   async getAllCategories() {
@@ -11,9 +10,6 @@ export const categoryMongoStore = {
   async getCategoryById(id) {
     if (Mongoose.isValidObjectId(id)) {
       const category = await Category.findOne({ _id: id }).lean();
-      if (category) {
-        category.locations = await locationMongoStore.getLocationsByCategoryId(category._id);
-      }
       return category;
     }
     return null;

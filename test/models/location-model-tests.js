@@ -7,7 +7,7 @@ import { assertSubset } from "../test-utils.js";
 suite("Location model tests", () => {
 
   setup(async () => {
-    db.init("json");
+    db.init("mongo");
     await db.locationStore.deleteAllLocations();
     for (let i = 0; i < testLocations.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
