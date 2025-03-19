@@ -1,3 +1,4 @@
+import { categoryApi } from "./api/category-api.js";
 import { locationApi } from "./api/location-api.js";
 import { userApi } from "./api/user-api.js";
 
@@ -13,4 +14,10 @@ export const apiRoutes = [
     { method: "POST", path: "/api/locations", config: locationApi.create },
     { method: "DELETE", path: "/api/locations", config: locationApi.deleteAll },
     { method: "GET", path: "/api/locations/{id}", config: locationApi.findOne },
+
+    // category api routes
+    { method: "GET", path: "/api/categories", config: categoryApi.find },
+    { method: "POST", path: "/api/categories", config: categoryApi.create },
+    { method: "DELETE", path: "/api/categories", config: categoryApi.deleteAll },
+    { method: "GET", path: "/api/categories/{id}", config: categoryApi.findOne },
 ];
