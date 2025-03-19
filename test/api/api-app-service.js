@@ -1,7 +1,7 @@
 import axios from "axios";
 import { serviceUrl } from "../fixtures.js";
 
-export const playtimeService = {
+export const apiService = {
   serviceUrl: serviceUrl,
 
   async createUser(user) {
