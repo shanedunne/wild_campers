@@ -1,0 +1,2 @@
+- delete one for users and category for api routes
+- select for category linked to getAllCategories

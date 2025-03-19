@@ -13,7 +13,8 @@ export const UserCredentialsSpec = {
 };
 
 export const LocationSpec = {
-  name: Joi.string().min(10).max(40).required(),
+  locationName: Joi.string().min(10).max(40).required(),
+  categoryId: Joi.string().required(),
   latitude: Joi.string().required(),
   longitude: Joi.string().required(),
   locationDescription: Joi.string().min(50).max(1000).required()

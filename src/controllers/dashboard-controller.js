@@ -5,11 +5,12 @@ export const dashboardController = {
   index: {
     handler: async function (request, h) {
       const locations = await db.locationStore.getAllLocations();
-      console.log(locations)
+      const categories = await db.categoryStore.getAllCategories();
 
       const viewData = {
         title: "Wild Campers Dashboard",
-        locations: locations
+        locations: locations,
+        categories: categories
       }
       return h.view("dashboard-view", viewData);
     },
@@ -26,11 +27,13 @@ export const dashboardController = {
 
     handler: async function (request, h) {
       const locationName = request.payload.locationName;
+      const categoryId = request.payload.categoryId;
       const latitude = request.payload.latitude;
       const longitude = request.payload.longitude;
       const locationDescription = request.payload.locationDescription;
       await db.locationStore.addLocation({
         name: locationName,
+        categoryId: categoryId,
         latitude: latitude,
         longitude: longitude,
         locationDescription: locationDescription

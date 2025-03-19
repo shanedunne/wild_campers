@@ -45,7 +45,8 @@ nav {
 
 /* FORMS */
 
-form .form-control {
+form .form-control,
+form .form-select {
   background-color: #fcf5d8;
 }
 

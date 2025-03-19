@@ -9,6 +9,16 @@
               aria-label="locationName" name="locationName" />
           </div>
           <div class="row">
+            <div class="mb-3">
+              <select class="form-select" name="categoryId" aria-label="Default select example">
+                <option selected>Category</option>
+                {{#each categories}}
+                  <option value="{{_id}}">{{categoryName}}</option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+          <div class="row">
             <div class="mb-3 col-md-6">
               <input type="text" id="latitude" class="form-control" placeholder="Latitude" aria-label="latitude"
                 name="latitude" />
