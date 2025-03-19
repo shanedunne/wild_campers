@@ -1,0 +1,53 @@
+import { assert } from "chai";
+import { assertSubset } from "../test-utils.js";
+import { apiService } from "./api-app-service.js";
+import { testLocations, achill, maggie, woodland } from "../fixtures.js";
+
+suite("Location API tests", () => {
+  let user = null;
+  let forest = null;
+
+  setup(async () => {
+    await apiService.deleteAllUsers();
+    await apiService.deleteAllLocations();
+    user = await apiService.createUser(maggie);
+    forest = await apiService.createCategory(woodland);
+  });
+
+  teardown(async () => {});
+
+  test("create location", async () => {
+    const returnedLocation = await apiService.createLocation(achill);
+    assertSubset(achill, returnedLocation);
+  });
+
+  test("create Multiple locations", async () => {
+    for (let i = 0; i < testLocations.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      await apiService.createLocation(testLocations[i]);
+    }
+    const returnedLocations = await apiService.getAllLocations();
+    assert.equal(returnedLocations.length, testLocations.length);
+    for (let i = 0; i < returnedLocations.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      const location = await apiService.getLocation(returnedLocations[i]._id);
+      assertSubset(location, returnedLocations[i]);
+    }
+  });
+
+  test("Delete locationApi", async () => {
+    for (let i = 0; i < testLocations.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      await apiService.createLocation(testLocations[i]);
+    }
+    let returnedLocations = await apiService.getAllLocations();
+    assert.equal(returnedLocations.length, testLocations.length);
+    for (let i = 0; i < returnedLocations.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      const location = await apiService.deleteLocation(returnedLocations[i]._id);
+    }
+    returnedLocations = await apiService.getAllLocations();
+    assert.equal(returnedLocations.length, 0);
+  });
+
+});

@@ -54,8 +54,8 @@ export const apiService = {
     return res.data;
   },
 
-  async createLocation(id, location) {
-    const res = await axios.post(`${this.serviceUrl}/api/categorys/${id}/locations`, location);
+  async createLocation(location) {
+    const res = await axios.post(`${this.serviceUrl}/api/locations`, location);
     return res.data;
   },
 

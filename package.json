@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node src/server.js",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**.js -exit"
+    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**.js -exit",
+    "dev": "./node_modules/.bin/nodemon  src/server.js"
+
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import": "^2.31.0",
     "mocha": "^11.1.0",
+    "nodemon": "^3.1.9",
     "prettier": "^3.4.2"
   },
   "dependencies": {
