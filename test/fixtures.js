@@ -72,3 +72,4 @@ export const testCategories = [
     { categoryName: "Mountain" },
     { categoryName: "River" },
 ]
+
