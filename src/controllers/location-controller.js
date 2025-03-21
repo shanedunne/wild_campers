@@ -8,7 +8,6 @@ export const locationController = {
       handler: async function (request, h) {
         const location = await db.locationStore.getLocationById(request.params.id);
         const category = await db.categoryStore.getCategoryById(location.categoryId);
-        // const categoryName = category.categoryName;
         const viewData = {
           title: "Location",
           location: location,

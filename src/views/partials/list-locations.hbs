@@ -1,3 +1,15 @@
+<div class="container my-4">
+  <form action="/dashboard/category" class="MB-4" method="GET">
+    <select class="form-select" name="categoryId" aria-label="Default select example" onchange="this.form.submit()">
+      <option value="">All Categories</option>
+      {{#each categories}}
+      <option value="{{_id}}" {{#if (filterByCategory ../selectedCategory _id)}}selected{{/if}}>
+        {{categoryName}}</option>
+      {{/each}}
+    </select>
+  </form>
+</div>
+
 <div class="container my-4 locations-container-card">
   <h2>Saved Locations</h2>
   <div class="row justify-content-center">

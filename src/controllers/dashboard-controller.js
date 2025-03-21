@@ -4,13 +4,22 @@ import { LocationSpec } from "../models/joi-schemas.js";
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
-      const locations = await db.locationStore.getAllLocations();
+      const categoryId = request.query.categoryId;
+      let locations;
+      if(categoryId){
+        locations = await db.locationStore.getLocationsByCategoryId(categoryId);
+
+      } else {
+        locations = await db.locationStore.getAllLocations();
+
+      }
       const categories = await db.categoryStore.getAllCategories();
 
       const viewData = {
         title: "Wild Campers Dashboard",
         locations: locations,
-        categories: categories
+        categories: categories,
+        selectedCategory: categoryId || ""
       }
       return h.view("dashboard-view", viewData);
     },
@@ -38,7 +47,7 @@ export const dashboardController = {
         longitude: longitude,
         locationDescription: locationDescription
       });
-      return h.redirect("/dashboard");
+      return h.redirect("/location");
     },
   },
 

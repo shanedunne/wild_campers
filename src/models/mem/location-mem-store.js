@@ -13,6 +13,10 @@ export const locationtMemStore = {
     return location;
   },
 
+  async getLocationsByCategoryId(id) {
+    return locations.filter((location) => location.categoryId === id);
+  },
+
   async getLocationById(id) {
     return locations.find((location) => location._id === id);
   },

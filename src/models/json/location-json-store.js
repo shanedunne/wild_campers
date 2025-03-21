@@ -15,6 +15,15 @@ export const locationJsonStore = {
     return location;
   },
 
+  async getLocationsByPlaylistId(id) {
+    await db.read();
+    let locations = db.data.locations.filter((location) => location.categoryId === id);
+    if(locations === undefined) {
+      locations = null;
+    }
+    return locations;
+  },
+
   async getLocationById(id) {
     await db.read();
     const location = db.data.locations.find((location) => location._id === id);

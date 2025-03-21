@@ -39,7 +39,7 @@ export const apiService = {
     return response;
   },
 
-  async getAllCategoies() {
+  async getAllCategories() {
     const res = await axios.get(`${this.serviceUrl}/api/categories`);
     return res.data;
   },

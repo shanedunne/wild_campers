@@ -17,6 +17,10 @@ import Joi from "joi";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// add handlebars helper for filtering
+Handlebars.registerHelper("filterByCategory", (a, b) => a.toString() === b.toString());
+
+
 async function init() {
     const server = Hapi.server({
         port: 3000,
