@@ -30,7 +30,8 @@ export const webRoutes = [
     { method: "POST", path: "/admin/addcategory", config: adminController.addCategory },
     { method: "GET", path: "/admin/deleteuser/{id}", config: adminController.deleteUser },
 
-
+    // wild card
+    { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } }
 
 
 ];

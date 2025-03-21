@@ -1,5 +1,31 @@
 {
-  "users": [],
+  "users": [
+    {
+      "firstName": "Maggie",
+      "lastName": "Simpson",
+      "email": "maggie@simpson.com",
+      "password": "secret",
+      "role": "USER",
+      "_id": "56c2d3b0-36b5-415e-90d4-97dedbff757d"
+    }
+  ],
   "locations": [],
-  "categories": []
+  "categories": [
+    {
+      "categoryName": "Woodland",
+      "_id": "674e495c-ee00-4fb5-8e67-834261cc81dd"
+    },
+    {
+      "categoryName": "Woodland",
+      "_id": "dc982581-a229-40e2-a456-01d096fcb746"
+    },
+    {
+      "categoryName": "Woodland",
+      "_id": "a037afff-6fd3-47fa-8d87-2b314a4ef712"
+    },
+    {
+      "categoryName": "Woodland",
+      "_id": "4fc7ab01-eb5a-494a-8bcb-522201bde8ed"
+    }
+  ]
 }

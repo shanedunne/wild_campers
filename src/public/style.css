@@ -55,15 +55,40 @@ form .form-control:focus {
 }
 
 /* BUTTONS */
+
+/* submit button */
 .submit-button {
   background-color: #606c38;
-
   color: #fefae0;
   transition: color 0.3s;
 }
 
 .submit-button:hover {
   background-color: #283618;
+  color: #fefae0;
+}
+
+/* signup button */
+.signup-button {
+  background-color: #606c38;
+  color: #fefae0;
+  transition: color 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #283618;
+  color: #fefae0;
+}
+
+/* login button */
+.login-button {
+  background-color: #283618;
+  color: #fefae0;
+  transition: color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #606c38;
   color: #fefae0;
 }
 
