@@ -51,6 +51,8 @@ export const categoryApi = {
         }
         return Boom.badImplementation("error creating category");
       } catch (err) {
+        console.error("Error in categoryApi.create:", err);
+
         return Boom.serverUnavailable("Database Error");
       }
     },

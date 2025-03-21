@@ -7,7 +7,7 @@ suite("Location API tests", () => {
     let user = null;
     let category = null;
     setup(async () => {
-        
+
         await apiService.deleteAllUsers();
         await apiService.deleteAllLocations();
         user = await apiService.createUser(maggie);

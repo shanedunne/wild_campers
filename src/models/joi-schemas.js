@@ -30,11 +30,12 @@ export const UserCredentialsSpec = {
 
 export const LocationSpec = Joi.object()
   .keys({
-    locationName: Joi.string().min(10).max(40).example("Wicklow Mountains").required(),
-    categoryId: Joi.string().required(),
+    name: Joi.string().min(10).max(40).example("Wicklow Mountains").required(),
+    categoryId: IdSpec,
     latitude: Joi.string().example("53.0000").required(),
     longitude: Joi.string().example("-6.4000").required(),
     locationDescription: Joi.string().min(50).max(1000).example("Experience rugged landscapes and serene valleys ideal for camping and hiking").required(),
+    userId: IdSpec,
     _id: IdSpec,
     __v: Joi.number(),
   })
@@ -60,4 +61,5 @@ export const CategoryArray = Joi.array().items(CategorySpec).label("CategoryArra
 export const CategorySpecPlus = CategorySpec.keys({
   _id: IdSpec,
   __v: Joi.number(),
+  locations: Joi.array().items(Joi.object()).optional()
 }).label("CategoryDetailsPlus");

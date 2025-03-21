@@ -11,7 +11,7 @@ const locationSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Category",
   },
-  userid: {
+  userId: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
