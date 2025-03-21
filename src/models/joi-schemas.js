@@ -1,33 +1,31 @@
 import Joi from "joi";
 
+// ID SPEC
 export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).description("a valid ID");
 
-export const UserSpec = Joi.object()
+// USER SCHEMAS
+export const UserCredentialsSpec = Joi.object()
   .keys({
-    firstName: Joi.string().example("Homer").required(),
-    lastName: Joi.string().example("Simpson").required(),
     email: Joi.string().email().example("homer@simpson.com").required(),
     password: Joi.string().example("secret").required(),
-    role: Joi.string().optional(),
-    _id: IdSpec,
-    __v: Joi.number(),
   })
-  .label("UserDetails");
+  .label("UserCredentials");
+
+export const UserSpec = UserCredentialsSpec.keys({
+  firstName: Joi.string().example("Homer").required(),
+  lastName: Joi.string().example("Simpson").required(),
+  role: Joi.string().required()
+}).label("UserDetails");
 
 export const UserSpecPlus = UserSpec.keys({
   _id: IdSpec,
   __v: Joi.number(),
 }).label("UserDetailsPlus");
 
+export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
-export const UserArray = Joi.array().items(UserSpec).label("UserArray");
 
-
-export const UserCredentialsSpec = {
-  email: Joi.string().email().required(),
-  password: Joi.string().required(),
-};
-
+// LOCATION SCHEMAS
 export const LocationSpec = Joi.object()
   .keys({
     name: Joi.string().min(10).max(40).example("Wicklow Mountains").required(),
@@ -48,11 +46,12 @@ export const LocationSpecPlus = LocationSpec.keys({
   __v: Joi.number(),
 }).label("LocationDetailsPlus");
 
+
+// CATEGORY SCHEMAS
 export const CategorySpec = Joi.object()
   .keys({
     categoryName: Joi.string().min(3).max(25).example("Beach").required(),
     _id: IdSpec,
-    __v: Joi.number(),
   })
   .label("CategoryDetails");
 

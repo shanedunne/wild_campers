@@ -3,12 +3,14 @@ import { assertSubset } from "../test-utils.js";
 import { maggie, testUsers } from "../fixtures.js";
 import { apiService } from "./api-app-service.js";
 
+const users = new Array(testUsers.length);
+
 suite("User API tests", () => {
   setup(async () => {
     await apiService.deleteAllUsers();
     for (let i = 0; i < testUsers.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      testUsers[0] = await apiService.createUser(testUsers[i]);
+      users[0] = await apiService.createUser(testUsers[i]);
     }
   });
   teardown(async () => {});
@@ -28,8 +30,8 @@ suite("User API tests", () => {
   });
 
   test("get a user", async () => {
-    const returnedUser = await apiService.getUser(testUsers[0]._id);
-    assert.deepEqual(testUsers[0], returnedUser);
+    const returnedUser = await apiService.getUser(users[0]._id);
+    assertSubset(testUsers[0], returnedUser);
   });
 
   test("get a user - bad id", async () => {
