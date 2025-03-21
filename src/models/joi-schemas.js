@@ -28,15 +28,36 @@ export const UserCredentialsSpec = {
   password: Joi.string().required(),
 };
 
-export const LocationSpec = {
-  locationName: Joi.string().min(10).max(40).required(),
-  categoryId: Joi.string().required(),
-  latitude: Joi.string().required(),
-  longitude: Joi.string().required(),
-  locationDescription: Joi.string().min(50).max(1000).required()
+export const LocationSpec = Joi.object()
+  .keys({
+    locationName: Joi.string().min(10).max(40).example("Wicklow Mountains").required(),
+    categoryId: Joi.string().required(),
+    latitude: Joi.string().example("53.0000").required(),
+    longitude: Joi.string().example("-6.4000").required(),
+    locationDescription: Joi.string().min(50).max(1000).example("Experience rugged landscapes and serene valleys ideal for camping and hiking").required(),
+    _id: IdSpec,
+    __v: Joi.number(),
+  })
+  .label("LocationDetails");
 
-};
+export const LocationArray = Joi.array().items(LocationSpec).label("LocationArray");
 
-export const CategorySpec = {
-  categoryName: Joi.string().min(3).max(25).required(),
-}
+export const LocationSpecPlus = LocationSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("LocationDetailsPlus");
+
+export const CategorySpec = Joi.object()
+  .keys({
+    categoryName: Joi.string().min(3).max(25).example("Beach").required(),
+    _id: IdSpec,
+    __v: Joi.number(),
+  })
+  .label("CategoryDetails");
+
+export const CategoryArray = Joi.array().items(CategorySpec).label("CategoryArray");
+
+export const CategorySpecPlus = CategorySpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("CategoryDetailsPlus");
