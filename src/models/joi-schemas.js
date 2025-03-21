@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).description("a valid ID");
-                                                                                     
+
 export const UserSpec = Joi.object()
   .keys({
     firstName: Joi.string().example("Homer").required(),
@@ -13,6 +13,11 @@ export const UserSpec = Joi.object()
     __v: Joi.number(),
   })
   .label("UserDetails");
+
+export const UserSpecPlus = UserSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("UserDetailsPlus");
 
 
 export const UserArray = Joi.array().items(UserSpec).label("UserArray");
