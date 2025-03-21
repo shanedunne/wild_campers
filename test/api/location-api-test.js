@@ -4,21 +4,31 @@ import { apiService } from "./api-app-service.js";
 import { testLocations, achill, maggie, woodland } from "../fixtures.js";
 
 suite("Location API tests", () => {
-
+    let user = null;
+    let category = null;
     setup(async () => {
+        
         await apiService.deleteAllUsers();
         await apiService.deleteAllLocations();
+        user = await apiService.createUser(maggie);
+        category = await apiService.createCategory(woodland);
+
+        achill.userId = user._id;
+        achill.categoryId = category._id;
     });
 
     teardown(async () => { });
 
     test("create location", async () => {
         const returnedLocation = await apiService.createLocation(achill);
+        assert.isNotNull(returnedLocation);
         assertSubset(achill, returnedLocation);
     });
 
     test("create Multiple locations", async () => {
         for (let i = 0; i < testLocations.length; i += 1) {
+            testLocations[i].userId = user._id;
+            testLocations[i].categoryId = category._id;
             // eslint-disable-next-line no-await-in-loop
             await apiService.createLocation(testLocations[i]);
         }
@@ -31,8 +41,12 @@ suite("Location API tests", () => {
         }
     });
 
-    test("Delete locationApi", async () => {
+    test("Delete location Api", async () => {
         for (let i = 0; i < testLocations.length; i += 1) {
+
+            testLocations[i].userId = user._id;
+            testLocations[i].categoryId = category._id;
+
             // eslint-disable-next-line no-await-in-loop
             await apiService.createLocation(testLocations[i]);
         }

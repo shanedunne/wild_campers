@@ -40,12 +40,14 @@ export const dashboardController = {
       const latitude = request.payload.latitude;
       const longitude = request.payload.longitude;
       const locationDescription = request.payload.locationDescription;
+      const loggedInUser = request.auth.credentials;
       await db.locationStore.addLocation({
         name: locationName,
         categoryId: categoryId,
         latitude: latitude,
         longitude: longitude,
-        locationDescription: locationDescription
+        locationDescription: locationDescription,
+        userId: loggedInUser._id
       });
       return h.redirect("/location");
     },

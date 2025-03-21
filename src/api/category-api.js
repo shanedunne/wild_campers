@@ -65,7 +65,7 @@ export const categoryApi = {
     auth: false,
     handler: async function (request, h) {
       try {
-        await db.categoryStore.deleteAllcategorys();
+        await db.categoryStore.deleteAllCategories();
         return h.response().code(204);
       } catch (err) {
         return Boom.serverUnavailable("Database Error");

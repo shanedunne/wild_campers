@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { assert } from "chai";
 import { apiService } from "./api-app-service.js";
-import { woodland, testCategories } from "../fixtures.js";
+import { woodland, testCategories, maggie } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
@@ -19,7 +19,7 @@ suite("Category API tests", () => {
   });
 
   test("delete a category", async () => {
-    const category = await apiService.createCategory();
+    const category = await apiService.createCategory(woodland);
     const response = await apiService.deleteCategory(category._id);
     assert.equal(response.status, 204);
     try {
