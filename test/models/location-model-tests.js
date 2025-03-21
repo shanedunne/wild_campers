@@ -1,14 +1,18 @@
 import { assert } from "chai";
 import { db } from "../../src/models/db.js";
-import { testLocations, achill } from "../fixtures.js";
+import { testLocations, achill, woodland } from "../fixtures.js";
 import { assertSubset } from "../test-utils.js";
 
 
 suite("Location model tests", () => {
 
+  let forest = null;
+
   setup(async () => {
     db.init("mongo");
     await db.locationStore.deleteAllLocations();
+    await db.categoryStore.deleteAllCategories();
+    forest = await db.categoryStore.addCategory(woodland);
     for (let i = 0; i < testLocations.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
       testLocations[i] = await db.locationStore.addLocation(testLocations[i]);
@@ -16,7 +20,7 @@ suite("Location model tests", () => {
   });
 
   test("create a location", async () => {
-    const location = await db.locationStore.addLocation(achill);
+    const location = await db.locationStore.addLocation(forest._id, achill);
     assertSubset(achill, location);
     assert.isDefined(location._id);
   });

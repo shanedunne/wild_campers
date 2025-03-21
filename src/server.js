@@ -11,6 +11,8 @@ import Cookie from "@hapi/cookie";
 import 'dotenv/config'
 import { accountsController } from "./controllers/accounts-controller.js";
 import Joi from "joi";
+import HapiSwagger from "hapi-swagger";
+
 
 
 
@@ -20,14 +22,28 @@ const __dirname = path.dirname(__filename);
 // add handlebars helper for filtering
 Handlebars.registerHelper("filterByCategory", (a, b) => a.toString() === b.toString());
 
+const swaggerOptions = {
+    info: {
+      title: "Playtime API",
+      version: "0.1",
+    },
+  };
+
 
 async function init() {
     const server = Hapi.server({
         port: 3000,
         host: "localhost",
     });
-    await server.register(Vision);
-    await server.register(Inert);
+    await server.register([
+        Inert,
+        Vision,
+        {
+          plugin: HapiSwagger,
+          options: swaggerOptions,
+        },
+      ]);
+    
     await server.register(Cookie);
     server.validator(Joi);
 
@@ -71,7 +87,7 @@ async function init() {
     });
 
     // initialise database
-    db.init("json");
+    db.init("mongo");
 
     // route for webroutes
     server.route(webRoutes);
