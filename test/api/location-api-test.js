@@ -1,16 +1,28 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { apiService } from "./api-app-service.js";
-import { testLocations, achill, maggie, woodland } from "../fixtures.js";
+import { testLocations, achill, maggie, woodland, admin } from "../fixtures.js";
 
 suite("Location API tests", () => {
     let user = null;
+    let adminUser = null;
     let category = null;
     setup(async () => {
 
-        await apiService.deleteAllUsers();
+        apiService.clearAuth();
+        adminUser = await apiService.createUser(admin);
+        await apiService.authenticate(admin);
+
         await apiService.deleteAllLocations();
+        await apiService.deleteAllUsers();
+
+
         user = await apiService.createUser(maggie);
+        await apiService.authenticate(maggie);
+
+        adminUser = await apiService.createUser(admin)
+        await apiService.authenticate(admin)
+
         category = await apiService.createCategory(woodland);
 
         achill.userId = user._id;

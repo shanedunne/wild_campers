@@ -8,6 +8,8 @@ export const apiRoutes = [
     { method: "POST", path: "/api/users", config: userApi.create },
     { method: "DELETE", path: "/api/users", config: userApi.deleteAll },
     { method: "GET", path: "/api/users/{id}", config: userApi.findOne },
+    { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
+
 
     // location api routes
     { method: "GET", path: "/api/locations", config: locationApi.find },
@@ -23,4 +25,6 @@ export const apiRoutes = [
     { method: "DELETE", path: "/api/categories", config: categoryApi.deleteAll },
     { method: "GET", path: "/api/categories/{id}", config: categoryApi.findOne },
     { method: "DELETE", path: "/api/categories/{id}", config: categoryApi.deleteOne },
+
+
 ];

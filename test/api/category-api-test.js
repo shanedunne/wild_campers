@@ -1,17 +1,31 @@
 import { EventEmitter } from "events";
 import { assert } from "chai";
 import { apiService } from "./api-app-service.js";
-import { woodland, testCategories, maggie } from "../fixtures.js";
+import { woodland, testCategories, admin } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
 suite("Category API tests", () => {
 
+  // declare admin user
+  let adminUser = null;
+
   setup(async () => {
+    apiService.clearAuth();
+    await apiService.createUser(admin);
+    await apiService.authenticate(admin);
+    await apiService.deleteAllUsers();
+    adminUser = await apiService.createUser(admin);
+    await apiService.authenticate(admin);
     await apiService.deleteAllCategories();
+
+
   });
 
-  teardown(async () => {});
+  teardown(async () => {
+    apiService.clearAuth();
+
+  });
 
   test("create category", async () => {
     const returnedCategory = await apiService.createCategory(woodland);

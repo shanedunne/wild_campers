@@ -9,6 +9,14 @@ export const maggie = {
     role: "USER",
 };
 
+export const admin = {
+    firstName: "admin",
+    lastName: "user",
+    email: "admin@user.com",
+    password: "secret",
+    role: "ADMIN",
+};
+
 export const testUsers = [
     {
         firstName: "Homer",

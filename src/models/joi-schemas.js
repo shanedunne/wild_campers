@@ -53,6 +53,8 @@ export const CategorySpec = Joi.object()
     categoryName: Joi.string().min(3).max(25).example("Beach").required(),
     _id: IdSpec,
   })
+  // added to allow for locations
+  .unknown(true)
   .label("CategoryDetails");
 
 export const CategoryArray = Joi.array().items(CategorySpec).label("CategoryArray");

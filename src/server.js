@@ -12,6 +12,8 @@ import 'dotenv/config'
 import { accountsController } from "./controllers/accounts-controller.js";
 import Joi from "joi";
 import HapiSwagger from "hapi-swagger";
+import jwt from "hapi-auth-jwt2";
+import { validate, validateAdmin } from "./api/jwt-utils.js";
 
 
 
@@ -24,10 +26,10 @@ Handlebars.registerHelper("filterByCategory", (a, b) => a.toString() === b.toStr
 
 const swaggerOptions = {
     info: {
-      title: "Playtime API",
-      version: "0.1",
+        title: "Playtime API",
+        version: "0.1",
     },
-  };
+};
 
 
 async function init() {
@@ -39,12 +41,13 @@ async function init() {
         Inert,
         Vision,
         {
-          plugin: HapiSwagger,
-          options: swaggerOptions,
+            plugin: HapiSwagger,
+            options: swaggerOptions,
         },
-      ]);
-    
+    ]);
+
     await server.register(Cookie);
+    await server.register(jwt);
     server.validator(Joi);
 
 
@@ -72,6 +75,20 @@ async function init() {
         validate: accountsController.validate,
     });
     server.auth.default("session");
+
+    // jwt strategy
+    server.auth.strategy("jwt", "jwt", {
+        key: process.env.cookie_password,
+        validate: validate,
+        verifyOptions: { algorithms: ["HS256"] }
+    });
+
+    // jwt admin strategy
+    server.auth.strategy("admin", "jwt", {
+        key: process.env.cookie_password,
+        validate: validateAdmin,
+        verifyOptions: { algorithms: ["HS256"] }
+    });
 
 
     // route for static css doc
