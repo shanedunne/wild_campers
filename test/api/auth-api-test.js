@@ -1,26 +1,26 @@
 import { assert } from "chai";
 import { apiService } from "./api-app-service.js";
 import { decodeToken } from "../../src/api/jwt-utils.js";
-import { maggie } from "../fixtures.js";
+import { maggie, maggieCredentials } from "../fixtures.js";
 
 suite("Authentication API tests", async () => {
   setup(async () => {
     apiService.clearAuth();
     await apiService.createUser(maggie);
-    await apiService.authenticate(maggie);
+    await apiService.authenticate(maggieCredentials);
     await apiService.deleteAllUsers();
   });
 
   test("authenticate", async () => {
     const returnedUser = await apiService.createUser(maggie);
-    const response = await apiService.authenticate(maggie);
+    const response = await apiService.authenticate(maggieCredentials);
     assert(response.success);
     assert.isDefined(response.token);
   });
 
   test("verify Token", async () => {
     const returnedUser = await apiService.createUser(maggie);
-    const response = await apiService.authenticate(maggie);
+    const response = await apiService.authenticate(maggieCredentials);
 
     const userInfo = decodeToken(response.token);
     assert.equal(userInfo.email, returnedUser.email);

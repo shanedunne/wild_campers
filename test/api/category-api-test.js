@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { assert } from "chai";
 import { apiService } from "./api-app-service.js";
-import { woodland, testCategories, admin } from "../fixtures.js";
+import { woodland, testCategories, admin, adminCredentials } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
@@ -13,10 +13,10 @@ suite("Category API tests", () => {
   setup(async () => {
     apiService.clearAuth();
     await apiService.createUser(admin);
-    await apiService.authenticate(admin);
+    await apiService.authenticate(adminCredentials);
     await apiService.deleteAllUsers();
     adminUser = await apiService.createUser(admin);
-    await apiService.authenticate(admin);
+    await apiService.authenticate(adminCredentials);
     await apiService.deleteAllCategories();
 
 

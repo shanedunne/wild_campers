@@ -26,10 +26,19 @@ Handlebars.registerHelper("filterByCategory", (a, b) => a.toString() === b.toStr
 
 const swaggerOptions = {
     info: {
-        title: "Playtime API",
-        version: "0.1",
+      title: "Wild Campers API",
+      version: "0.1"
     },
-};
+    securityDefinitions: {
+      jwt: {
+        type: "apiKey",
+        name: "Authorization",
+        in: "header"
+      }
+    },
+    security: [{ jwt: [] }]
+  };
+  
 
 
 async function init() {

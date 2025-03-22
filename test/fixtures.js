@@ -9,6 +9,13 @@ export const maggie = {
     role: "USER",
 };
 
+export const maggieCredentials = {
+    email: "maggie@simpson.com",
+    password: "secret",
+    role: "USER",
+  };
+  
+
 export const admin = {
     firstName: "admin",
     lastName: "user",
@@ -16,6 +23,13 @@ export const admin = {
     password: "secret",
     role: "ADMIN",
 };
+
+export const adminCredentials = {
+    email: "admin@user.com",
+    password: "secret",
+    role: "ADMIN",
+  };
+  
 
 export const testUsers = [
     {
