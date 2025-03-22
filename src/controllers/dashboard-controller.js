@@ -5,13 +5,12 @@ export const dashboardController = {
   index: {
     handler: async function (request, h) {
       const categoryId = request.query.categoryId;
+      const user = request.auth.credentials;
       let locations;
       if(categoryId){
         locations = await db.locationStore.getLocationsByCategoryId(categoryId);
-
       } else {
         locations = await db.locationStore.getAllLocations();
-
       }
       const categories = await db.categoryStore.getAllCategories();
 
@@ -19,7 +18,8 @@ export const dashboardController = {
         title: "Wild Campers Dashboard",
         locations: locations,
         categories: categories,
-        selectedCategory: categoryId || ""
+        selectedCategory: categoryId || "",
+        user: user
       }
       return h.view("dashboard-view", viewData);
     },

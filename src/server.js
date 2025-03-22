@@ -22,23 +22,27 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // add handlebars helper for filtering
-Handlebars.registerHelper("filterByCategory", (a, b) => a.toString() === b.toString());
+Handlebars.registerHelper("eq", (a, b) => {
+    if (typeof a === "undefined" || typeof b === "undefined") {
+        return false;
+    } return a.toString() === b.toString()
+});
 
 const swaggerOptions = {
     info: {
-      title: "Wild Campers API",
-      version: "0.1"
+        title: "Wild Campers API",
+        version: "0.1"
     },
     securityDefinitions: {
-      jwt: {
-        type: "apiKey",
-        name: "Authorization",
-        in: "header"
-      }
+        jwt: {
+            type: "apiKey",
+            name: "Authorization",
+            in: "header"
+        }
     },
     security: [{ jwt: [] }]
-  };
-  
+};
+
 
 
 async function init() {

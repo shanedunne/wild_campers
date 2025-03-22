@@ -3,7 +3,7 @@
     <select class="form-select" name="categoryId" aria-label="Default select example" onchange="this.form.submit()">
       <option value="">All Categories</option>
       {{#each categories}}
-      <option value="{{_id}}" {{#if (filterByCategory ../selectedCategory _id)}}selected{{/if}}>
+      <option value="{{_id}}" {{#if (eq ../selectedCategory _id)}}selected{{/if}}>
         {{categoryName}}</option>
       {{/each}}
     </select>
