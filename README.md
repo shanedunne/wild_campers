@@ -1,5 +1,7 @@
 # Wild Campers
 
+[Visit Site](https://wild-campers.onrender.com/)
+
 Wild Campers is a site to allow nature enthusiasts to share their favourite wild camping locations. It can be hard to find places in the wild to camp where you are not breaking any rules or tresspassing. Wild Campers is here to provide that service for you.
 
 
@@ -10,6 +12,7 @@ The repo can be found here: [Github](https://github.com/shanedunne/wild_campers)
 
 - **Location Summaries**: Summaries for each location
 - **Login System**: The ability to create an account, login and logout
+- **Admin Dashboard**: The admin account can delete users and create and delete categories.
 
 ## Pages
 ### Index / Home
@@ -27,7 +30,7 @@ Home page prompting the user to either sign up or log in via the buttons in the 
 
 ### Dashboard
 - The dashboard is where the user can access and add wild camping locations
-- The user can add a camping spots by providing the location name, coordinates and a brief description
+- The user can add a camping spots by providing the location name, coordinates and a brief description. When adding a location, the user can upload an image.
 
 ### Location View
 - The location view contains all information related to a camping spot.
@@ -35,8 +38,8 @@ Home page prompting the user to either sign up or log in via the buttons in the 
 ### Account
 - The user can come and view their account information here. There is a button that will take them to the Account Edit view if they need to change some information
 
-### Account Editing View
-- Coming soon
+### Admin Dashboard
+- An admin can remove users and manage categories users can choose when adding locaitons.
 
 
 ## Use Cases
@@ -50,13 +53,14 @@ Home page prompting the user to either sign up or log in via the buttons in the 
 
 ## Technologies used
 
-- Javascript - for handling and rendering data and components
-- Handlebars - as the HTML templating system to produce the pages
-- Express JS - As the server
-- Axios - for fetching data from external APIs
+- Javascript
+- Handlebars
+- Express JS
+- Axios
 - Hapi
 - Chai
 - Mocha
 - MongoDB
+- Mongoose
 
 
