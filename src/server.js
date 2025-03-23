@@ -48,7 +48,7 @@ const swaggerOptions = {
 async function init() {
     const server = Hapi.server({
         port: process.env.PORT || 3000,
-        host: "localhost",
+        host: "0.0.0.0"
     });
     await server.register([
         Inert,
