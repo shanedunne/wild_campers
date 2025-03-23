@@ -15,6 +15,7 @@ const locationSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  img: String,
 });
 
 export const Location = Mongoose.model("Location", locationSchema);

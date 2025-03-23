@@ -1,12 +1,11 @@
 html {
-  height: 100vh;
+  height: 100%;
   margin: 0;
 }
 
 .body-div {
   padding: 0;
   width: auto;
-  height: 100vh;
   background-color: #fefae0;
   font-family: "Fauna One", serif;
   font-weight: 400;
@@ -137,7 +136,6 @@ form .form-control:focus {
 /* LOCATION VIEW */
 .location-container {
   width: 70%;
-  padding: 2rem;
 }
 
 

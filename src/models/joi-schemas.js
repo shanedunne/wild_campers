@@ -34,6 +34,7 @@ export const LocationSpec = Joi.object()
     latitude: Joi.string().example("53.0000").required(),
     longitude: Joi.string().example("-6.4000").required(),
     locationDescription: Joi.string().min(50).max(1000).example("Experience rugged landscapes and serene valleys ideal for camping and hiking").required(),
+    locationImage: Joi.any().optional(), 
     userId: IdSpec,
     _id: IdSpec,
     __v: Joi.number(),

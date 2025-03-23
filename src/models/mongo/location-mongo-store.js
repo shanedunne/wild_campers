@@ -43,6 +43,7 @@ export const locationMongoStore = {
     locationDoc.latitude = updatedlocation.latitude;
     locationDoc.longitude = updatedlocation.longitude;
     locationDoc.locationDescription = updatedlocation.locationDescription;
+    locationDoc.img = updatedlocation.img;
     await locationDoc.save();
   },
 };

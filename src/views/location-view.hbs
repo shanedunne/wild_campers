@@ -1,31 +1,31 @@
 {{> menu}}
 <section class="section">
-    <div class="d-flex justify-content-center" style="min-height: 90vh;">
-  <div class="container">
-    <div class="location-container">
+  <div class="d-flex justify-content-center" style="min-height: 90vh;">
+    <div class="container">
+      <div class="text-center my-4">
+      <img src={{location.img}} class="location-image img-fluid">
+    </div>
+      <div class="location-container">
         <div class="location-name my-5">
-        <h2>
+          <h2>
             {{location.name}}
-        </h2>
-        <p class="coordinates">
+          </h2>
+          <p class="coordinates">
             <small class="text-muted">
               Latitude: {{location.latitude}}, Longitude: {{location.longitude}}
             </small>
           </p>
           <p class="category">
-            <small>{{category.categoryName}}</small>
+            <small><strong>{{category.categoryName}}</strong></small>
           </p>
-          <p class="country">
-            <small>Ireland</small>
-          </p>
-    </div>
-    <div class="location-content">
-        <p>
+        </div>
+        <div class="location-content">
+          <p>
             {{location.locationDescription}}
-        </p>
+          </p>
+        </div>
+      </div>
+
     </div>
-    </div>
-    
   </div>
-    </div>
 </section>

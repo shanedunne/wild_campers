@@ -2,11 +2,11 @@
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
       <h2>Add a location</h2>
-      <form action="/dashboard/addlocation" method="POST">
+      <form action="/dashboard/addlocation" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
           <div class="mb-3">
-            <input type="text" id="locationName" class="form-control" placeholder="Location Name"
-              aria-label="locationName" name="locationName" />
+            <input type="text" id="name" class="form-control" placeholder="Location Name"
+              aria-label="name" name="name" />
           </div>
           <div class="row">
             <div class="mb-3">
@@ -32,6 +32,11 @@
             <textarea id="locationDescription" name="locationDescription" class="form-control"
               placeholder="Location Description" rows="3"></textarea>
           </div>
+          <div class="mb-3">
+            <label for="locationImage" class="form-label">Upload Location Image</label>
+            <input type="file" id="locationImage" name="locationImage" class="form-control file-input" accept="image/png, image/jpeg">
+            <span class="file-name"></span>
+          </div>
           <div class="d-grid">
             {{> submit-button}}
           </div>
@@ -40,3 +45,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  const fileInput = document.querySelector(".file-input");
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector(".file-name");
+      fileName.textContent = fileInput.files[0].name;
+    }
+  };
+</script>
