@@ -1,11 +1,13 @@
 html {
   height: 100%;
   margin: 0;
+  
 }
 
 .body-div {
   padding: 0;
   width: auto;
+  min-height: 100vh;
   background-color: #fefae0;
   font-family: "Fauna One", serif;
   font-weight: 400;
