@@ -1,15 +1,49 @@
 import { Location } from "./location.js";
+import { imageStore } from "../image-store.js";
 
 export const locationMongoStore = {
   async getAllLocations() {
-    const locations = await Location.find().lean();
+    const locations = await Location.find().populate("categoryId").populate("userId").lean();
     return locations;
   },
 
-  async addLocation(location) {
-    const newLocation = new Location(location);
-    const locationObj = await newLocation.save();
-    return this.getLocationById(locationObj._id);
+  async addLocation(location, userCredentials) {
+    const imageUrls = [];
+
+    if(location.locationImage) {
+      const imageFiles = Array.isArray(location.locationImage) ? location.locationImage : [ location.locationImage];
+  
+      for (const imageBuffer of imageFiles){
+        if (Buffer.isBuffer(imageBuffer) && imageBuffer.length > 0){
+          try {
+            const url = await imageStore.uploadImage(imageBuffer);
+            if(url){
+              imageUrls.push(url);
+            }
+          } catch (error) {
+            console.error("failed to upload image", error);
+          }
+        }
+      }
+    }
+    const newLocationData = {
+      name: location.name,
+      latitude: location.latitude,
+      longitude: location.longitude,
+      locationDescription: location.locationDescription,
+      categoryId: location.categoryId,
+      userId: userCredentials._id,
+      locationImages: imageUrls,
+      accessibleByVehicle: location.accessibleByVehicle || false,
+      petFriendly: location.petFriendly || false,
+      swimming: location.swimming || false,
+      hiking: location.hiking || false,
+      closeToTown: location.closeToTown || false,
+      greatViews: location.greatViews || false,
+    };
+    const newLocation = new Location(newLocationData);
+    const savedLocation = await newLocation.save();
+    return savedLocation.toObject();
   },
 
   async getLocationsByCategoryId(id) {

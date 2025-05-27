@@ -10,7 +10,6 @@ export const apiRoutes = [
     { method: "GET", path: "/api/users/{id}", config: userApi.findOne },
     { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
 
-
     // location api routes
     { method: "GET", path: "/api/locations", config: locationApi.find },
     { method: "POST", path: "/api/locations", config: locationApi.create },

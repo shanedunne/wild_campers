@@ -4,6 +4,8 @@ import Joi from "joi";
 export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).description("a valid ID");
 
 // USER SCHEMAS
+
+
 export const UserCredentialsSpec = Joi.object()
   .keys({
     email: Joi.string().email().example("homer@simpson.com").required(),
@@ -15,7 +17,7 @@ export const UserCredentialsSpec = Joi.object()
 export const UserSpec = UserCredentialsSpec.keys({
   firstName: Joi.string().example("Homer").required(),
   lastName: Joi.string().example("Simpson").required(),
-  
+
 }).label("UserDetails");
 
 export const UserSpecPlus = UserSpec.keys({
@@ -27,27 +29,45 @@ export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
 
 // LOCATION SCHEMAS
-export const LocationSpec = Joi.object()
-  .keys({
-    name: Joi.string().min(10).max(40).example("Wicklow Mountains").required(),
-    categoryId: IdSpec,
-    latitude: Joi.string().example("53.0000").required(),
-    longitude: Joi.string().example("-6.4000").required(),
-    locationDescription: Joi.string().min(50).max(1000).example("Experience rugged landscapes and serene valleys ideal for camping and hiking").required(),
-    locationImage: Joi.any().optional(), 
-    userId: IdSpec,
-    _id: IdSpec,
-    __v: Joi.number(),
-  })
-  .label("LocationDetails");
+export const LocationSpec = Joi.object({
+  name: Joi.string().min(10).max(40).required(),
+  categoryId: IdSpec.required(),
+  latitude: Joi.string().required(),
+  longitude: Joi.string().required(),
+  locationDescription: Joi.string().min(50).max(1000).required(),
+  locationImage: Joi.alternatives().try(
+      Joi.binary().meta({ swaggerType: 'file' }),
+      Joi.array().items(Joi.binary().meta({ swaggerType: 'file' }))
+  ).optional().description('File buffer or array of file buffers for upload'),
+  accessibleByVehicle: Joi.boolean().default(false),
+  petFriendly: Joi.boolean().default(false),
+  swimming: Joi.boolean().default(false),
+  hiking: Joi.boolean().default(false),
+  closeToTown: Joi.boolean().default(false),
+  greatViews: Joi.boolean().default(false),
+}).label("LocationCreatePayload");
 
-export const LocationArray = Joi.array().items(LocationSpec).label("LocationArray");
 
-export const LocationSpecPlus = LocationSpec.keys({
-  _id: IdSpec,
+export const LocationSpecPlus = Joi.object({
+  _id: IdSpec.required(),
+  name: Joi.string().min(10).max(40).required(),
+  categoryId: IdSpec.required(), // Consider if this should be an object if populated
+  latitude: Joi.string().required(),
+  longitude: Joi.string().required(),
+  locationDescription: Joi.string().min(50).max(1000).required(),
+  locationImages: Joi.array().items(Joi.string().uri()).optional().description('Array of Cloudinary image URLs'), // PLURAL
+  accessibleByVehicle: Joi.boolean().default(false),
+  petFriendly: Joi.boolean().default(false),
+  swimming: Joi.boolean().default(false),
+  hiking: Joi.boolean().default(false),
+  closeToTown: Joi.boolean().default(false),
+  greatViews: Joi.boolean().default(false),
+  userId: IdSpec.optional(), // Consider if this should be an object if populated
   __v: Joi.number(),
-}).label("LocationDetailsPlus");
+}).label("LocationResponseDetails");
 
+
+export const LocationArray = Joi.array().items(LocationSpecPlus).label("LocationArray");
 
 // CATEGORY SCHEMAS
 export const CategorySpec = Joi.object()
@@ -71,5 +91,7 @@ export const JwtAuth = Joi.object()
   .keys({
     success: Joi.boolean().example("true").required(),
     token: Joi.string().example("eyJhbGciOiJND.g5YmJisIjoiaGYwNTNjAOhE.gCWGmY5-YigQw0DCBo").required(),
+    role: Joi.string().required().example("USER"),
+
   })
   .label("JwtAuth");

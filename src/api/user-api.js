@@ -3,6 +3,7 @@ import { db } from "../models/db.js";
 import { UserArray, IdSpec, UserSpecPlus, UserSpec, JwtAuth, UserCredentialsSpec } from "../models/joi-schemas.js";
 import { validationError } from "./logger.js";
 import { createToken } from "./jwt-utils.js";
+import { comparePassword } from "../utils/hash-utils.js";
 
 
 
@@ -86,7 +87,6 @@ export const userApi = {
     description: "Delete all userApi",
     notes: "All userApi removed from application",
   },
-
   authenticate: {
     auth: false,
     handler: async function (request, h) {
@@ -95,11 +95,18 @@ export const userApi = {
         if (!user) {
           return Boom.unauthorized("User not found");
         }
-        if (user.password !== request.payload.password) {
+        const passwordFromRequest = request.payload.password;
+        const storedPassword = user.password;
+        const passwordMatch = await comparePassword(passwordFromRequest, storedPassword)
+        if (passwordMatch) {
+          const token = createToken(user);
+          const role = user.role;
+          return h.response({ success: true, token: token, role: role }).code(201);
+
+        } else {
           return Boom.unauthorized("Invalid password");
         }
-        const token = createToken(user);
-        return h.response({ success: true, token: token }).code(201);
+
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }
@@ -110,5 +117,6 @@ export const userApi = {
     validate: { payload: UserCredentialsSpec, failAction: validationError },
     response: { schema: JwtAuth, failAction: validationError },
   },
+  
 
 };

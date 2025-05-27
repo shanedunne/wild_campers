@@ -48,10 +48,18 @@ export const locationApi = {
     auth: {
       strategy: "jwt",
     },
+    payload: {
+      parse: true,
+      multipart: true,
+      output: "data",
+      maxBytes: 20 * 1024 * 1024
+    },
     handler: async function (request, h) {
       try {
         const location = request.payload;
-        const newLocation = await db.locationStore.addLocation(location);
+        const loggedInUser = request.auth.credentials;
+
+        const newLocation = await db.locationStore.addLocation(location, loggedInUser);
         if (newLocation) {
           return h.response(newLocation).code(201);
         }

@@ -37,18 +37,28 @@ const swaggerOptions = {
         jwt: {
             type: "apiKey",
             name: "Authorization",
-            in: "header"
+            in: "header",
         }
     },
     security: [{ jwt: [] }]
 };
 
 
-
 async function init() {
     const server = Hapi.server({
         port: process.env.PORT || 3000,
-        host: "0.0.0.0"
+        host: "0.0.0.0",
+        routes: {
+            cors: {
+              origin: ["http://localhost:5173"],
+              credentials: true,
+              additionalHeaders: [
+                "Authorization",
+                "Content-Type"
+              ],
+              additionalExposedHeaders: ["Authorization"]
+            }
+          }
     });
     await server.register([
         Inert,
@@ -89,20 +99,23 @@ async function init() {
     });
     server.auth.default("session");
 
-    // jwt strategy
+    // jwt strategy 
     server.auth.strategy("jwt", "jwt", {
         key: process.env.cookie_password,
         validate: validate,
         verifyOptions: { algorithms: ["HS256"] }
     });
 
-    // jwt admin strategy
+    // jwt admin strategy 
     server.auth.strategy("admin", "jwt", {
         key: process.env.cookie_password,
         validate: validateAdmin,
         verifyOptions: { algorithms: ["HS256"] }
     });
 
+
+
+    
 
     // route for static css doc
     server.route({

@@ -15,7 +15,13 @@ const locationSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  img: String,
+  locationImages: [String],
+  accessibleByVehicle: Boolean,
+  petFriendly: Boolean,
+  swimming: Boolean,
+  hiking: Boolean,
+  closeToTown: Boolean,
+  greatViews: Boolean,
 });
 
 export const Location = Mongoose.model("Location", locationSchema);

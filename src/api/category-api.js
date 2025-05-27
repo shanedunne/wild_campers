@@ -46,7 +46,7 @@ export const categoryApi = {
 
   create: {
     auth: {
-      strategy: "admin",
+      strategy: "jwt",
     },
     handler: async function (request, h) {
       try {
@@ -71,7 +71,7 @@ export const categoryApi = {
 
   deleteOne: {
     auth: {
-      strategy: "admin",
+      strategy: "jwt",
     },
     handler: async function (request, h) {
       try {
@@ -92,7 +92,7 @@ export const categoryApi = {
 
   deleteAll: {
     auth: {
-      strategy: "admin",
+      strategy: "jwt",
     },
     handler: async function (request, h) {
       try {
