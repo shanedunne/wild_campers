@@ -50,15 +50,15 @@ async function init() {
         host: "0.0.0.0",
         routes: {
             cors: {
-              origin: ["http://localhost:5173"],
-              credentials: true,
-              additionalHeaders: [
-                "Authorization",
-                "Content-Type"
-              ],
-              additionalExposedHeaders: ["Authorization"]
+                origin: [process.env.SVELTE_FRONTEND_URL || "http://localhost:5173"],
+                credentials: true,
+                additionalHeaders: [
+                    "Authorization",
+                    "Content-Type"
+                ],
+                additionalExposedHeaders: ["Authorization"]
             }
-          }
+        }
     });
     await server.register([
         Inert,
@@ -115,7 +115,7 @@ async function init() {
 
 
 
-    
+
 
     // route for static css doc
     server.route({
